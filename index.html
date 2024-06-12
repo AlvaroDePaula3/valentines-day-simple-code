@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./imagens/coracao.png" type="image/x-icon">
+    <title> Amo vc amor </title>
+</head>
+<body>
+    <div>
+        <h1>Feliz dia dos namorados amor, te amo muito <3</h1>
+        <br>
+        <div class="container">
+        <div class="botoes">
+            <div id="cor">
+                <h2>Áudio falando que me ama (sendo fofinha)? <img id="emoji" src="./imagens/emoji é pra mim.png" alt="Emoji"></h2>
+                <div class="opcoes">
+                    <a href="https://youtu.be/8LBrw4zhF-Q?si=McHxyRRRVs14HpXF"><button id="sim">SIM</button></a>
+                    <button id="nao">NÃO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const naoButton = document.getElementById('nao');
+
+            naoButton.addEventListener('mouseover', function() {
+                // Randomly move the button within the container
+                const container = naoButton.parentElement;
+                const containerRect = container.getBoundingClientRect();
+                const buttonRect = naoButton.getBoundingClientRect();
+
+                const maxLeft = containerRect.width - buttonRect.width;
+                const maxTop = containerRect.height - buttonRect.height;
+
+                const randomLeft = Math.random() * maxLeft;
+                const randomTop = Math.random() * maxTop;
+
+                naoButton.style.position = 'absolute';
+                naoButton.style.left = `${randomLeft}px`;
+                naoButton.style.top = `${randomTop}px`;
+            });
+        });
+    </script>
+</body>
+</html>
